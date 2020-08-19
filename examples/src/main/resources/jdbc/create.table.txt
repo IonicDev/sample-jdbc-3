@@ -1,0 +1,20 @@
+CREATE TABLE personnel(
+  id serial PRIMARY KEY,
+  first VARCHAR (64),
+  last VARCHAR (64),
+  zip VARCHAR (64),
+  department VARCHAR (64)
+);
+
+CREATE TABLE access(
+  id serial PRIMARY KEY,
+  first VARCHAR (64),
+  last VARCHAR (64),
+  zip VARCHAR (64),
+  department VARCHAR (64)
+);
+
+CREATE TABLE activity(
+  id serial PRIMARY KEY,
+  keyid VARCHAR (64)
+);

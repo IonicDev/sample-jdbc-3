@@ -1,0 +1,49 @@
+{
+  "status": "Published",
+  "enabled": true,
+  "policyId": "jdbc-classification-pi",
+  "description": "Data is marked with classification matching pi.",
+  "ruleCombiningAlgId": "first-applicable",
+  "target": {
+    "condition": {
+      "functionId": "string-at-least-one-member-of",
+      "args": [
+        {
+          "dataType": "string",
+          "value": [
+            "pi"
+          ]
+        },
+        {
+          "category": "resource",
+          "id": "classification"
+        }
+      ]
+    }
+  },
+  "rules": [
+    {
+      "effect": "Permit",
+      "description": "Allow access when user has the role 'hr_role.'",
+      "condition": {
+        "functionId": "string-at-least-one-member-of",
+        "args": [
+          {
+            "category": "subject",
+            "id": "role"
+          },
+          {
+            "dataType": "string",
+            "value": [
+              "hr_role"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "effect": "Deny",
+      "description": "Always deny."
+    }
+  ]
+}

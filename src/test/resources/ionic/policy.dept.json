@@ -1,0 +1,29 @@
+{
+  "enabled": true,
+  "policyId": "jdbc-sample-department",
+  "description": "Data is marked with department matching HR.",
+  "ruleCombiningAlgId": "deny-overrides",
+  "target": {
+    "condition": {
+      "functionId": "string-at-least-one-member-of",
+      "args": [
+        {
+          "dataType": "string",
+          "value": [
+            "HR"
+          ]
+        },
+        {
+          "category": "resource",
+          "id": "department"
+        }
+      ]
+    }
+  },
+  "rules": [
+    {
+      "effect": "Deny",
+      "description": "Always deny."
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "status": "Published",
+  "enabled": true,
+  "policyId": "jdbc-sample-pii",
+  "description": "Data is marked with classification matching pii.",
+  "ruleCombiningAlgId": "first-applicable",
+  "target": {
+    "condition": {
+      "functionId": "string-at-least-one-member-of",
+      "args": [
+        {
+          "dataType": "string",
+          "value": [
+            "pii"
+          ]
+        },
+        {
+          "category": "resource",
+          "id": "classification"
+        }
+      ]
+    }
+  },
+  "rules": [
+    {
+      "effect": "Permit",
+      "description": "Allow access when user is in the group JDBC Demo HR.",
+      "condition": {
+        "functionId": "string-at-least-one-member-of",
+        "args": [
+          {
+            "category": "subject",
+            "id": "group"
+          },
+          {
+            "dataType": "string",
+            "value": [
+              "5e574b8d16a3690102ff3e53"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "effect": "Deny",
+      "description": "Always deny."
+    }
+  ]
+}

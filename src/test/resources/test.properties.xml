@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE properties SYSTEM 'http://java.sun.com/dtd/properties.dtd'>
+<properties>
+  <!-- JDBC properties -->
+  <entry key='driverClassName'>org.postgresql.Driver</entry>
+  <entry key='jdbc.url'>jdbc:postgresql://localhost:5432/</entry>
+  <entry key='jdbc.user'>postgres</entry>  <!-- substitute your postgres account here (default: postgres) -->
+  <entry key='jdbc.password'></entry>  <!-- substitute your postgres account password here -->
+
+  <!-- Access Table SQL commands -->
+  <entry key='jdbc.sql.update.access'>
+    UPDATE access SET first=(?), last=(?), zip=(?),
+    department=(?)
+  </entry>
+  <entry key='jdbc.sql.insert.access'>
+    INSERT INTO access (first, last, zip, department)
+    VALUES (?, ?, ?, ?)
+  </entry>
+  <entry key='jdbc.sql.select.access'>
+    SELECT * FROM access
+  </entry>
+
+  <!-- Personnel Table SQL commands -->
+  <entry key='jdbc.sql.insert.personnel'>
+    INSERT INTO personnel (first, last, zip, department)
+    VALUES (?, ?, ?, ?)
+  </entry>
+  <entry key='jdbc.sql.select.personnel'>
+    SELECT * FROM personnel
+  </entry>
+
+  <!-- Ionic API properties -->
+  <entry key='ionic.url'>https://api.ionic.com</entry>
+  <entry key='ionic.tenantid'></entry>  <!--substitute your Ionic tenant id here -->
+  <!-- Ionic API Authorization Type (Basic | Bearer) -->
+  <entry key='ionic.authorizationtype'>Basic</entry>
+  <entry key='ionic.basic.user'></entry>  <!--substitute your Ionic tenant account user name here -->
+  <entry key='ionic.basic.password'></entry>  <!--substitute your Ionic tenant account password here -->
+  <entry key='ionic.bearer.apitoken'></entry>  <!--substitute your Ionic tenant API token here -->
+
+  <!-- Ionic JDBC app sample data -->
+  <entry key='ionic.sampledata.userid'></entry>  <!--substitute user ID for user requesting key here -->
+  <entry key='ionic.sampledata.groupid'></entry>  <!--substitute group ID for group to join here -->
+  <entry key='ionic.sampledata.roleid'></entry>  <!--substitute role ID for role to assign user here -->
+</properties>
+

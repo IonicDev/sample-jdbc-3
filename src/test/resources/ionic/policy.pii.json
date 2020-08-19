@@ -1,0 +1,29 @@
+{
+  "enabled": true,
+  "policyId": "jdbc-sample-pii",
+  "description": "Data is marked with classification matching pii.",
+  "ruleCombiningAlgId": "deny-overrides",
+  "target": {
+    "condition": {
+      "functionId": "string-at-least-one-member-of",
+      "args": [
+        {
+          "dataType": "string",
+          "value": [
+            "pii"
+          ]
+        },
+        {
+          "category": "resource",
+          "id": "classification"
+        }
+      ]
+    }
+  },
+  "rules": [
+    {
+      "effect": "Deny",
+      "description": "Always deny."
+    }
+  ]
+}
